@@ -22,7 +22,7 @@ public class RandomEncounterBehaviour : MonoBehaviour
     void Start()
     {
         player_rb = GetComponent<Rigidbody2D>();
-        saveDataPath = Application.dataPath + Path.AltDirectorySeparatorChar + SceneManager.GetActiveScene().name + "position.txt";
+        saveDataPath = Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData" + Path.AltDirectorySeparatorChar + SceneManager.GetActiveScene().name + "position.txt";
         loadPosition();
     }
 

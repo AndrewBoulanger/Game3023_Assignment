@@ -15,18 +15,19 @@ public class ItemSlot : MonoBehaviour
     [SerializeField]
     private Image itemIcon;
 
+    private Button button;
+
     // Start is called before the first frame update
     void Start()
     {
         RefreshIcon();
-        itemIcon.GetComponent<Button>().onClick.AddListener(UseItemInSlot);
+        button = GetComponent<Button>();
+        if(button != null)
+        {
+            button.onClick.AddListener(UseItemInSlot);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void UseItemInSlot()
     {
@@ -47,7 +48,7 @@ public class ItemSlot : MonoBehaviour
         {
             itemInSlot = null;
             itemCountText.text = "";
-             itemIcon.GetComponent<Button>().onClick.RemoveListener(UseItemInSlot);
+            button.onClick.RemoveListener(UseItemInSlot);
         }
 
         if(itemInSlot != null)
@@ -64,6 +65,13 @@ public class ItemSlot : MonoBehaviour
 
     private void OnDisable()
     {
-        
+        if(button != null)
+            button.onClick.RemoveListener(UseItemInSlot);
+    }
+
+    private void OnEnable()
+    {
+        if(button != null)
+            button.onClick.AddListener(UseItemInSlot);
     }
 }
