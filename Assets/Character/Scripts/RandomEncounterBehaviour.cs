@@ -9,8 +9,12 @@ public class RandomEncounterBehaviour : MonoBehaviour
 {
      [Range(0, 100)]
     public float encounterRate = 0;
-    public float frameDelay = 10;
-    public float encounterRateIncrement = 0.5f;
+    public float timeDelayInSeconds = 0.5f;
+    public float encounterRateIncrement = 0.1f;
+    Timer checkEncounterTimer;
+
+    //determines the minimum number of random encounter checks to be made before a random encounter can occur
+    float guaranteedSafeChecks = 10;
 
    Rigidbody2D player_rb;
 
@@ -18,12 +22,15 @@ public class RandomEncounterBehaviour : MonoBehaviour
 
     bool isEnteringBattle = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
+        checkEncounterTimer = new Timer();
         player_rb = GetComponent<Rigidbody2D>();
-        saveDataPath = Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData" + Path.AltDirectorySeparatorChar + SceneManager.GetActiveScene().name + "position.txt";
+        saveDataPath = Application.dataPath + Path.DirectorySeparatorChar + SceneManager.GetActiveScene().name + "position.txt";
         loadPosition();
+
     }
 
 
@@ -41,16 +48,19 @@ public class RandomEncounterBehaviour : MonoBehaviour
     //if it fails add to encounter rate
     private void CheckForRandomEncounter()
     {
-        if(Time.frameCount % frameDelay == 0)
+        if(checkEncounterTimer.CheckTimer(timeDelayInSeconds))
         {
-            float randomNum = Random.Range(0, 100);
+            //the random number will never be below (checkFrequency*guaranteed safe checks) (the first 10 checks are always safe)
+            int minRange = (int)(timeDelayInSeconds * guaranteedSafeChecks);
+            float randomNum = Random.Range(minRange, 100);
+
             if (encounterRate > randomNum)
-            {
+            { 
+                //time for a random encounter
                 savePosition(transform.position);
                 SceneManager.LoadScene(tag);
-
             }
-            else
+            else //no encounter this time, raise chances of one happening
                 encounterRate += encounterRateIncrement;
         }
     }
