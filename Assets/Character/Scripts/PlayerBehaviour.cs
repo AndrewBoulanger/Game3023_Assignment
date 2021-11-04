@@ -31,6 +31,8 @@ public class PlayerBehaviour : MonoBehaviour
 
         rigidbody.velocity *= (1-decay);
 
+        if(Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
     }
 
 
