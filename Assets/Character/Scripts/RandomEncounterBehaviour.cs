@@ -29,7 +29,7 @@ public class RandomEncounterBehaviour : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "TallGrass" && player_rb.velocity.sqrMagnitude > 0.1) //moving in tall grass
+        if (collision.tag == "RandomEncounterTile" && player_rb.velocity.sqrMagnitude > 0.1) //moving on a random encounter tile
         {
             CheckForRandomEncounter();
 
