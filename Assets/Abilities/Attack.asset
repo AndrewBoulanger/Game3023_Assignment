@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Attack
   target: 0
-  effects: []
+  effects:
+  - {fileID: 11400000, guid: d58fd87eb126c314796d229eff681d08, type: 2}
+  type: 0

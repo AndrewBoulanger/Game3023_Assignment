@@ -22,13 +22,15 @@ public class Ability : ScriptableObject
     public void Cast(ICharacter self, ICharacter other)
     {
 
-        Debug.Log("Cast " + name);
+        string message = self.name + " used " + name;
 
         foreach(IEffect effect in effects)
         {
             effect.ApplyEffect(self, other);
+
+            message +="\n" + effect.GetEffectMessage(self, other);
         }
 
-        self.onAbilityCast.Invoke(this, self);
+        self.onAbilityCast.Invoke(this, self, message);
     }
 }

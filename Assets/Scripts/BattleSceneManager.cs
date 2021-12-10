@@ -11,7 +11,7 @@ public class BattleSceneManager : MonoBehaviour
 
     //could change this to a non-scene dependent object that saves the last scene's name when leaving the scene, maybe a scriptable object
     [SerializeField]
-    string lastScene = "Overworld";
+    string lastScene = "Cafeteria";
 
     WorldTraveler OverworldSprite;
     private void Start()
@@ -25,10 +25,15 @@ public class BattleSceneManager : MonoBehaviour
         fleeButton.onClick.AddListener(LeaveScene);
     }
 
-    void LeaveScene()
+    public void LeaveScene()
     {
         SceneManager.LoadScene(lastScene);
  
+    }
+
+    public void ExitGame()
+    {
+        SceneManager.LoadScene("MainMenuScene");
     }
 
     private void OnDisable()
