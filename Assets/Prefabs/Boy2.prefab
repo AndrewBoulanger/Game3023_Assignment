@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6258105942534450522}
   - component: {fileID: 6258105942534450525}
   m_Layer: 0
-  m_Name: Chef
+  m_Name: Boy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -558935500146219362, guid: d14544bb48396c84c90e34b2abfad3b4, type: 3}
+  m_Sprite: {fileID: 8379459420453883163, guid: 01bd9a6aad126e244882add6f90f09cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,11 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc3bb0ae8d17b74eaa9bdd0e63be5ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Chef
+  name: Boy2
   abilities:
   - {fileID: 11400000, guid: 4313584d9aa47614f8548475fdcba558, type: 2}
-  - {fileID: 11400000, guid: a1fab43960a1e444aa6b70f14554cdd9, type: 2}
-  - {fileID: 11400000, guid: 1d9f88c531ac4c240978afe79afa47d7, type: 2}
   - {fileID: 11400000, guid: ff3894eb452d8014396e517f1a0ba6ec, type: 2}
   onAbilityCast:
     m_PersistentCalls:
