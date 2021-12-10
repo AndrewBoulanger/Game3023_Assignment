@@ -174,12 +174,7 @@ GameObject:
   - component: {fileID: 1280337267048126441}
   - component: {fileID: 2909860201460345518}
   - component: {fileID: 3389622783062402346}
-<<<<<<< HEAD:Assets/Prefabs/Bob Bobski.prefab
-  - component: {fileID: -6441964672210213444}
-  - component: {fileID: 1701042418}
-=======
   - component: {fileID: 186905397220622851}
->>>>>>> SceneThemeChanged:Assets/Character/Bob Bobski.prefab
   m_Layer: 0
   m_Name: Bob Bobski
   m_TagString: BattleScene
@@ -195,7 +190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280337267048126437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.17, z: 0}
+  m_LocalPosition: {x: 0.91, y: 0.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 519420032}
@@ -221,7 +216,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 59dc931dab993ed498a0837f169c89a6, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -265,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc84592e42fc0e2418e6687b23d47427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 18
+  moveSpeed: 15
   decay: 0.4
 --- !u!50 &1280337267048126446
 Rigidbody2D:
@@ -329,14 +324,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   encounterRate: 0
-  timeDelayInSeconds: 0.5
+  frameDelay: 30
   encounterRateIncrement: 1
-<<<<<<< HEAD:Assets/Prefabs/Bob Bobski.prefab
-  debugText: {fileID: 7378115386322402945, guid: abf38b922f28a784bb79c21fd893b707, type: 3}
---- !u!95 &-6441964672210213444
-=======
 --- !u!95 &186905397220622851
->>>>>>> SceneThemeChanged:Assets/Character/Bob Bobski.prefab
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -346,11 +336,7 @@ Animator:
   m_GameObject: {fileID: 1280337267048126437}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-<<<<<<< HEAD:Assets/Prefabs/Bob Bobski.prefab
-  m_Controller: {fileID: 9100000, guid: 04dfb80f8459ce04c8b53f76a545733d, type: 2}
-=======
   m_Controller: {fileID: 9100000, guid: 2b4f5343698fa7f4f8deddaa1ee379f8, type: 2}
->>>>>>> SceneThemeChanged:Assets/Character/Bob Bobski.prefab
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -359,18 +345,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
-<<<<<<< HEAD:Assets/Prefabs/Bob Bobski.prefab
---- !u!114 &1701042418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1280337267048126437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 544147651a03fda4e9fa4c5953f05e7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-=======
->>>>>>> SceneThemeChanged:Assets/Character/Bob Bobski.prefab

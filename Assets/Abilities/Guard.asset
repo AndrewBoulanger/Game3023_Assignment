@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82638301e4b23d24a861aae902f673e2, type: 3}
-  m_Name: Item
+  m_Name: Guard
   m_EditorClassIdentifier: 
-  name: an Item
+  name: guard
   target: 1
   effects: []
-  type: 3
+  type: 4

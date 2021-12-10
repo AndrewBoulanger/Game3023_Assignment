@@ -19,11 +19,15 @@ public class BattleInstance : MonoBehaviour
     [SerializeField]
     Ability enemyAttack;
 
+    bool ReadyToAdvanceTurn;
+
     // Start is called before the first frame update
     void Start()
     {
        player.onAbilityCast.AddListener(OnAbilityCast);
         Enemy.onAbilityCast.AddListener(OnAbilityCast);
+        player.OnCharacterDefeated.AddListener(OnPlayerDefeated);
+        Enemy.OnCharacterDefeated.AddListener(OnEnemyDefeated);
        uI.onTextAnimationDone.AddListener(OnTextDisplayed);
 
         player.SetOpponent(Enemy);
@@ -35,9 +39,10 @@ public class BattleInstance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((!isPlayersTurn) && Input.GetMouseButtonDown(0))
+        if(ReadyToAdvanceTurn && Input.GetButtonDown("Submit"))
         {
-           // EnemyAttack();
+            ReadyToAdvanceTurn = false;
+           AdvanceTurns();
         }
     }
 
@@ -47,12 +52,13 @@ public class BattleInstance : MonoBehaviour
     
     private void OnAbilityCast(Ability ability, ICharacter caster)
     {
-        uI.DisplayText(caster.name + " used " + ability.name);
+        uI.DisplayText(caster.gameObject.name + " used " + ability.name);
+         uI.SetAbilityPanelVisible(false);
     }
 
     private void OnTextDisplayed()
     {
-        AdvanceTurns();
+        ReadyToAdvanceTurn = true;
     }
 
     public void AdvanceTurns()
@@ -69,10 +75,21 @@ public class BattleInstance : MonoBehaviour
         }
         else
         {
-            uI.SetAbilityPanelVisible(false);
+           // uI.SetAbilityPanelVisible(false);
             OnEnemyTurnBegin.Invoke(Enemy);
             Enemy.TakeTurn();
         }
+    }
+
+
+    private void OnPlayerDefeated(ICharacter player)
+    {
+        uI.DisplayText("You've run out of health. \n Game Over");
+    }
+
+    private void OnEnemyDefeated(ICharacter enemy)
+    {
+        uI.DisplayText(enemy.gameObject.name  + " was defeated");
     }
 
 }

@@ -10,8 +10,13 @@ public abstract class ICharacter : MonoBehaviour
     
     public Ability[] abilities;
     public UnityEvent<Ability, ICharacter> onAbilityCast;
+    public UnityEvent<ICharacter> OnCharacterDefeated;
 
-    ICharacter opponent;
+    protected ICharacter opponent;
+
+    [SerializeField]
+    protected int maxHealth;
+    protected int currentHealth;
 
     public void SetOpponent(ICharacter other)
     {
@@ -24,6 +29,15 @@ public abstract class ICharacter : MonoBehaviour
     public void UseAbility(int abilitySlot)
     {
         abilities[abilitySlot].Cast(this, opponent);
+    }
+
+    public virtual void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if(currentHealth <= 0)
+            OnCharacterDefeated.Invoke(this);
+
     }
 
 }

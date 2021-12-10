@@ -15,6 +15,7 @@ public class PlayerBehaviour : MonoBehaviour
     private Rigidbody2D rigidbody;
     Animator animator;
 
+    float inputY, inputX;
 
     // Start is called before the first frame update
     void Start()
@@ -33,18 +34,19 @@ public class PlayerBehaviour : MonoBehaviour
 
         rigidbody.velocity *= (1-decay);
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
-
-        if(Mathf.Abs(rigidbody.velocity.x) < 0.01 && Mathf.Abs(rigidbody.velocity.y) < 0.01)
+        if (Mathf.Abs(rigidbody.velocity.x) < 0.01 && Mathf.Abs(rigidbody.velocity.y) < 0.01)
         {
             animator.SetBool("IsMoving", false);
         }
-        else{
-            animator.SetFloat("Vely", inputX);
-            animator.SetFloat("Velx", inputY);
+        else
+        {
+            animator.SetFloat("Vely", Input.GetAxisRaw("Vertical"));
+            animator.SetFloat("Velx", Input.GetAxisRaw("Horizontal"));
             animator.SetBool("IsMoving", true);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
 
     }
 

@@ -98,7 +98,7 @@ public class RandomEncounterBehaviour : MonoBehaviour
     IEnumerator BattleEntrySequence()
     {
         player_rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        MusicManager.Instance.PlayTrack(MusicManager.TrackID.Battle, 1.5f);
+  
         yield return new WaitForSeconds(1.5f);
         player_rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         SceneManager.LoadScene(tag);

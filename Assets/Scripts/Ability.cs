@@ -14,6 +14,11 @@ public class Ability : ScriptableObject
     [SerializeField]
     private IEffect[] effects;
 
+    [SerializeField]
+    private AbilityTypes type;
+
+    public AbilityTypes Type {get => type; private set => type = value;}
+
     public void Cast(ICharacter self, ICharacter other)
     {
 

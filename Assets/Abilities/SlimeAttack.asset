@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82638301e4b23d24a861aae902f673e2, type: 3}
   m_Name: SlimeAttack
   m_EditorClassIdentifier: 
-  name: Slime Attack
+  name: Chef Attack
   target: 0
   effects: []

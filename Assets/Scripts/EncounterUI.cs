@@ -31,7 +31,7 @@ public class EncounterUI : MonoBehaviour
         animateTextReference = AnimateText("You have encountered an opponent");
         StartCoroutine(animateTextReference);
 
-        SetAbilityPanelVisible(true);
+       // SetAbilityPanelVisible(true);
  
     }
 
@@ -53,7 +53,7 @@ public class EncounterUI : MonoBehaviour
 
     public void DisplayText(string message)
     {
-        animateTextReference = AnimateText("You have encountered an opponent");
+        animateTextReference = AnimateText(message);
         StartCoroutine(animateTextReference);
     }
 

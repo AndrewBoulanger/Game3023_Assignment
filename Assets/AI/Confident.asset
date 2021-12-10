@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82638301e4b23d24a861aae902f673e2, type: 3}
-  m_Name: Item
+  m_Script: {fileID: 11500000, guid: df955d1f7992f88459854bc7bf8dfae6, type: 3}
+  m_Name: Confident
   m_EditorClassIdentifier: 
-  name: an Item
-  target: 1
-  effects: []
-  type: 3
+  buffs_and_debuffs: 2
+  attacks: 1.5
+  healing: 0.001
+  defensive: 0.2

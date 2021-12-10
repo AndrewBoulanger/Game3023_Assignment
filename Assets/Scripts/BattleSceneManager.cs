@@ -28,7 +28,7 @@ public class BattleSceneManager : MonoBehaviour
     void LeaveScene()
     {
         SceneManager.LoadScene(lastScene);
-        MusicManager.Instance.PlayTrack(MusicManager.TrackID.Overworld, 1.5f);
+ 
     }
 
     private void OnDisable()
