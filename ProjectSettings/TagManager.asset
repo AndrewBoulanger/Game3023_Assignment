@@ -8,6 +8,9 @@ TagManager:
   - Forest
   - BattleScene
   - RandomEncounterTile
+  - TallGrass
+  - Kitchen
+  - Cafeteria
   layers:
   - Default
   - TransparentFX
