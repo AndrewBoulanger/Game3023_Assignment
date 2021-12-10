@@ -13,12 +13,14 @@ public class PlayerBehaviour : MonoBehaviour
     private float decay = 0.01f;
 
     private Rigidbody2D rigidbody;
+    Animator animator;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,7 +32,16 @@ public class PlayerBehaviour : MonoBehaviour
         rigidbody.AddForce(new Vector2(inputX * moveSpeed, inputY * moveSpeed));
 
         rigidbody.velocity *= (1-decay);
-
+        
+        if(Mathf.Abs(rigidbody.velocity.x) < 0.01 && Mathf.Abs(rigidbody.velocity.y) < 0.01)
+        {
+            animator.SetBool("IsMoving", false);
+        }
+        else{
+            animator.SetFloat("Vely", Input.GetAxisRaw("Vertical"));
+            animator.SetFloat("Velx", Input.GetAxisRaw("Horizontal"));
+            animator.SetBool("IsMoving", true);
+        }
     }
 
 

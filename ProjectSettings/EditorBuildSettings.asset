@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Forest.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Overworld.unity
+    path: Assets/Scenes/Cafeteria.unity
     guid: 5c35d0df4f86f6f4baa1e34c885bd63c
   - enabled: 1
     path: Assets/Scenes/BattleScene.unity
