@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Item", menuName = "ItemSystem/item")]
 public class Item : ScriptableObject
 {
-    public string name = "item";
+    public new string name = "item";
     [TextArea]
     public string description;
 

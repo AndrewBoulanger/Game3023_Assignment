@@ -26,6 +26,7 @@ public class RandomEncounterBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         checkEncounterTimer = new Timer();
         player_rb = GetComponent<Rigidbody2D>();
         saveDataPath = Application.dataPath + Path.DirectorySeparatorChar + SceneManager.GetActiveScene().name + "position.txt";
@@ -58,7 +59,8 @@ public class RandomEncounterBehaviour : MonoBehaviour
             { 
                 //time for a random encounter
                 savePosition(transform.position);
-                SceneManager.LoadScene(tag);
+                isEnteringBattle = true;
+                StartCoroutine("BattleEntrySequence");
             }
             else //no encounter this time, raise chances of one happening
                 encounterRate += encounterRateIncrement;
@@ -91,6 +93,17 @@ public class RandomEncounterBehaviour : MonoBehaviour
         }
 
     }
+
+
+    IEnumerator BattleEntrySequence()
+    {
+        player_rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        MusicManager.Instance.PlayTrack(MusicManager.TrackID.Battle, 1.5f);
+        yield return new WaitForSeconds(1.5f);
+        player_rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        SceneManager.LoadScene(tag);
+    }
+
 
     private void OnDisable()
     {
