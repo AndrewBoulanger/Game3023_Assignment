@@ -14,22 +14,14 @@ public class PlayerBehaviour : MonoBehaviour
 
     private Rigidbody2D rigidbody;
     Animator animator;
-    bool isMoving = false;
 
-    [SerializeField]
-    private AudioClip footStep;
-   
-
-    [SerializeField]
-    private AudioSource musicSrc;
-
+    float inputY, inputX;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        musicSrc = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,25 +36,17 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (Mathf.Abs(rigidbody.velocity.x) < 0.01 && Mathf.Abs(rigidbody.velocity.y) < 0.01)
         {
-           
-            isMoving = false;
-        }
-        else{
-          
-            isMoving = true;
-        }
-        animator.SetFloat("Vely", Input.GetAxisRaw("Vertical"));
-        animator.SetFloat("Velx", Input.GetAxisRaw("Horizontal"));
-        animator.SetBool("IsMoving", isMoving);
-        if (isMoving)
-        {
-            if (!musicSrc.isPlaying)
-            {
-                musicSrc.Play();
-            }
+            animator.SetBool("IsMoving", false);
         }
         else
-            musicSrc.Stop();
+        {
+            animator.SetFloat("Vely", Input.GetAxisRaw("Vertical"));
+            animator.SetFloat("Velx", Input.GetAxisRaw("Horizontal"));
+            animator.SetBool("IsMoving", true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
 
     }
 
