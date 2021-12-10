@@ -9,7 +9,7 @@ public class EncounterPlayerCharacter : ICharacter
     [SerializeField]
     List<AbilityButton> abilityButtons;
 
-
+    public HealthBar healthbar;
     private void Start()
     {
 
@@ -25,7 +25,7 @@ public class EncounterPlayerCharacter : ICharacter
             else
                 abilityButtons[i].gameObject.SetActive(false);
         }
-                
+        healthbar.SetMaxHealth(stats.MaxHealth);
     }
 
 
@@ -38,5 +38,9 @@ public class EncounterPlayerCharacter : ICharacter
     public override void TakeTurn()
     {
 
+    }
+    public void Update()
+    {
+        healthbar.SetHealth(stats.CurrentHealth);
     }
 }

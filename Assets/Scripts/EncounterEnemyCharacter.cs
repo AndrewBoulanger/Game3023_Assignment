@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EncounterEnemyCharacter : ICharacter
 {
+    public HealthBar healthbar;
     //ordered list of probability values, distance from the previous value represents the probability of that ability being called
     List<float> AbilityProbabilityRange;
 
@@ -24,6 +25,7 @@ public class EncounterEnemyCharacter : ICharacter
         stats.CurrentHealth = stats.MaxHealth;
         AbilityProbabilityRange = new List<float>();
         UpdateAIPattern();
+        healthbar.SetMaxHealth(stats.MaxHealth);
     }
 
   
@@ -50,13 +52,14 @@ public class EncounterEnemyCharacter : ICharacter
         int damageResult = base.TakeDamage(damage);
 
         UpdateAIPattern();
-
+        healthbar.SetHealth(stats.CurrentHealth);
         return damageResult;
     }
 
     public override void AddHealth(int healthToAdd)
     {
         base.AddHealth(healthToAdd);
+        healthbar.SetHealth(stats.CurrentHealth);
         UpdateAIPattern();
     }
 
