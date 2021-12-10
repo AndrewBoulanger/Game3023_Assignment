@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: guard
   target: 1
-  effects: []
+  effects:
+  - {fileID: 11400000, guid: 8ed926db9dbcdca4982559e7abd17c4a, type: 2}
   type: 4

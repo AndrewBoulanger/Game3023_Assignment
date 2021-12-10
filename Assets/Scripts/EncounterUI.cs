@@ -23,7 +23,6 @@ public class EncounterUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         //disable panel => animate text => display panel
 
         abilityPanel.SetActive(false);
@@ -38,7 +37,6 @@ public class EncounterUI : MonoBehaviour
 
     public IEnumerator AnimateText(string message)
     {
-         animateTextReference = AnimateText(message);
         encounterText.text = "";
         for(int currentCharacter = 0; currentCharacter < message.Length; currentCharacter++ )
         {
@@ -46,15 +44,16 @@ public class EncounterUI : MonoBehaviour
 
             yield return new WaitForSeconds(timeBetweenCharacters);
         }
-
          animateTextReference = null;
         onTextAnimationDone.Invoke();
     }
+
 
     public void DisplayText(string message)
     {
         animateTextReference = AnimateText(message);
         StartCoroutine(animateTextReference);
+
     }
 
     public void disableAbilityPanel()

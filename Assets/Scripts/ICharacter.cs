@@ -9,15 +9,17 @@ public abstract class ICharacter : MonoBehaviour
     public new string name;
     
     public Ability[] abilities;
-    public UnityEvent<Ability, ICharacter> onAbilityCast;
+    public UnityEvent<Ability, ICharacter, string> onAbilityCast;
     public UnityEvent<ICharacter> OnCharacterDefeated;
+
+    [SerializeField]
+    protected CharacterStats stats;
 
     protected ICharacter opponent;
 
-    [SerializeField]
-    protected int maxHealth;
-    protected int currentHealth;
-
+    bool isGuarding, isBuffed;
+    public void SetGuarding() => isGuarding = true;
+    public void SetIsBuffed() => isBuffed = true;
     public void SetOpponent(ICharacter other)
     {
         if(opponent == null)
@@ -29,15 +31,43 @@ public abstract class ICharacter : MonoBehaviour
     public void UseAbility(int abilitySlot)
     {
         abilities[abilitySlot].Cast(this, opponent);
+
     }
 
-    public virtual void TakeDamage(int damage)
+    public virtual int TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        float tempDamage = damage;
+        if (isGuarding)
+        {
+            tempDamage *= (1.0f - ((float)stats.Defence)/100.0f);
+            isGuarding = false;
+        }
 
-        if(currentHealth <= 0)
+        stats.CurrentHealth -= (int)tempDamage;
+
+        if(stats.CurrentHealth <= 0)
             OnCharacterDefeated.Invoke(this);
 
+        return (int)tempDamage;
     }
 
+    public virtual void AddHealth(int healthToAdd)
+    {
+        stats.CurrentHealth += healthToAdd;
+
+        if(stats.CurrentHealth > stats.MaxHealth)
+           stats.CurrentHealth = stats.MaxHealth;
+    }
+
+    public int CalculateDamage()
+    {
+        int damage = stats.Damage;
+
+        if(isBuffed)
+        { 
+            damage *= 2;
+            isBuffed = false;
+        }
+        return damage;
+    }
 }

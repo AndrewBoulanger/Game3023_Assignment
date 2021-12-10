@@ -21,6 +21,8 @@ public class BattleInstance : MonoBehaviour
 
     bool ReadyToAdvanceTurn;
 
+    bool wonBattle, lostBattle, battleIsOver, readyToLeaveScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,10 +41,30 @@ public class BattleInstance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(ReadyToAdvanceTurn && Input.GetButtonDown("Submit"))
+        if(Input.GetButtonDown("Submit"))
         {
-            ReadyToAdvanceTurn = false;
-           AdvanceTurns();
+            if(readyToLeaveScene)
+            {
+                EndBattleScene();
+            }
+            else if (battleIsOver && Input.GetButtonDown("Submit"))
+            {
+                if (wonBattle)
+                {
+                    uI.DisplayText(Enemy.name + " was defeated");
+                }
+                else
+                    uI.DisplayText("You've run out of health. \nGameOver");
+            }
+
+            if (ReadyToAdvanceTurn && Input.GetButtonDown("Submit"))
+            {
+                ReadyToAdvanceTurn = false;
+
+                AdvanceTurns();
+            }
+
+
         }
     }
 
@@ -50,15 +72,24 @@ public class BattleInstance : MonoBehaviour
     public UnityEvent<ICharacter> OnPlayerTurnBegin;
     public UnityEvent<ICharacter> OnEnemyTurnBegin;
     
-    private void OnAbilityCast(Ability ability, ICharacter caster)
+    private void OnAbilityCast(Ability ability, ICharacter caster, string msg)
     {
-        uI.DisplayText(caster.gameObject.name + " used " + ability.name);
+        uI.DisplayText(msg);
          uI.SetAbilityPanelVisible(false);
     }
 
     private void OnTextDisplayed()
     {
-        ReadyToAdvanceTurn = true;
+        if(battleIsOver)
+        {
+            readyToLeaveScene = true;
+        }
+        else if(wonBattle || lostBattle)
+        {
+            battleIsOver = true;
+        }
+        else
+            ReadyToAdvanceTurn = true;
     }
 
     public void AdvanceTurns()
@@ -66,6 +97,9 @@ public class BattleInstance : MonoBehaviour
         isPlayersTurn = !isPlayersTurn;
 
         ICharacter currentCharacter = (isPlayersTurn) ? player : Enemy;
+
+        if(wonBattle || lostBattle)
+            return;
 
         if (isPlayersTurn)
         {
@@ -84,12 +118,19 @@ public class BattleInstance : MonoBehaviour
 
     private void OnPlayerDefeated(ICharacter player)
     {
-        uI.DisplayText("You've run out of health. \n Game Over");
+        lostBattle = true;
     }
 
     private void OnEnemyDefeated(ICharacter enemy)
     {
-        uI.DisplayText(enemy.gameObject.name  + " was defeated");
+        wonBattle = true;
     }
 
+    private void EndBattleScene()
+    {
+        if(wonBattle)
+            GetComponent<BattleSceneManager>().LeaveScene();
+        else
+            GetComponent<BattleSceneManager>().ExitGame();
+    }
 }

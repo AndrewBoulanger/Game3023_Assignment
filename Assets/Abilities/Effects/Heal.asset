@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82638301e4b23d24a861aae902f673e2, type: 3}
+  m_Script: {fileID: 11500000, guid: de90c9a40f19b9c4d98cc24b027c2b5e, type: 3}
   m_Name: Heal
   m_EditorClassIdentifier: 
-  name: heal
-  target: 1
-  effects:
-  - {fileID: 11400000, guid: a42005c29b8c65449bb9e12da85bfd92, type: 2}
-  type: 3
+  healthToAdd: 10

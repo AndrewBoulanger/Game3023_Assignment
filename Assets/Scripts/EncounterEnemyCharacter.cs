@@ -21,8 +21,8 @@ public class EncounterEnemyCharacter : ICharacter
 
     private void Start()
     {
+        stats.CurrentHealth = stats.MaxHealth;
         AbilityProbabilityRange = new List<float>();
-        currentHealth = maxHealth;
         UpdateAIPattern();
     }
 
@@ -37,31 +37,39 @@ public class EncounterEnemyCharacter : ICharacter
         {
             if(randomValue < AbilityProbabilityRange[i])
             {
-                abilities[i].Cast(this, opponent);
+                UseAbility(i);
+
                 break;
             }
         }
 
     }
 
-    public override void TakeDamage(int damage)
+    public override int TakeDamage(int damage)
     {
-        base.TakeDamage(damage);
+        int damageResult = base.TakeDamage(damage);
 
         UpdateAIPattern();
 
+        return damageResult;
+    }
+
+    public override void AddHealth(int healthToAdd)
+    {
+        base.AddHealth(healthToAdd);
+        UpdateAIPattern();
     }
 
     //changes the AI pattern based on the enemy's health
-   void UpdateAIPattern()
+    void UpdateAIPattern()
     {
-        if (currentHealth == maxHealth)
+        if (stats.CurrentHealth == stats.MaxHealth)
             ChangeEnemyAIPattern(maxHealthbehaviour);
-        else if (currentHealth > maxHealth * 0.5)
+        else if (stats.CurrentHealth > stats.MaxHealth * 0.5)
             ChangeEnemyAIPattern(healthOverHalfbehaviour);
-        else if (currentHealth > maxHealth * 0.25)
+        else if (stats.CurrentHealth > stats.MaxHealth * 0.25)
             ChangeEnemyAIPattern(HealthBelowHalfbehaviour);
-        else if (currentHealth < 0.25)
+        else if (stats.CurrentHealth < 0.25)
             ChangeEnemyAIPattern(criticalHealthbehaviour);
     }
 
