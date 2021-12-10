@@ -1,7 +1,103 @@
 fileFormatVersion: 2
 guid: ea8b18f757159354f80554b38370cd89
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 399818133032022604
+    second: Boy3_0
+  - first:
+      213: 4185734897737668242
+    second: Boy3_1
+  - first:
+      213: 8971946073824242449
+    second: Boy3_2
+  - first:
+      213: -4292970018856081860
+    second: Boy3_3
+  - first:
+      213: 794054887294086863
+    second: Boy3_4
+  - first:
+      213: 4997191162800790679
+    second: Boy3_5
+  - first:
+      213: 8032922341523823157
+    second: Boy3_6
+  - first:
+      213: -6628140648820017482
+    second: Boy3_7
+  - first:
+      213: -8080346228934838550
+    second: Boy3_8
+  - first:
+      213: 9143063535254719373
+    second: Boy3_9
+  - first:
+      213: -4540365083517397679
+    second: Boy3_10
+  - first:
+      213: 6574952242217816161
+    second: Boy3_11
+  - first:
+      213: 580390038221053762
+    second: Boy3_12
+  - first:
+      213: 4206261918622101514
+    second: Boy3_13
+  - first:
+      213: 1395274102063089635
+    second: Boy3_14
+  - first:
+      213: -1531040188780887874
+    second: Boy3_15
+  - first:
+      213: -279613253514799813
+    second: Boy3_16
+  - first:
+      213: 6520619801420278928
+    second: Boy3_17
+  - first:
+      213: -8044944484344690834
+    second: Boy3_18
+  - first:
+      213: -3978836013114652337
+    second: Boy3_19
+  - first:
+      213: 1489363900791510726
+    second: Boy3_20
+  - first:
+      213: -5727428811327877509
+    second: Boy3_21
+  - first:
+      213: 6776666892299548678
+    second: Boy3_22
+  - first:
+      213: -3855249546577787058
+    second: Boy3_23
+  - first:
+      213: -3273646375997382293
+    second: Boy3_24
+  - first:
+      213: -333675646627116257
+    second: Boy3_25
+  - first:
+      213: 1924569986646477841
+    second: Boy3_26
+  - first:
+      213: 7140740680692833919
+    second: Boy3_27
+  - first:
+      213: -9043389485196632940
+    second: Boy3_28
+  - first:
+      213: -2794223857216690305
+    second: Boy3_29
+  - first:
+      213: 1232717527403829139
+    second: Boy3_30
+  - first:
+      213: 6251589998322213713
+    second: Boy3_31
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +137,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +171,705 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Boy3_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 101
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c42322249707c8500800000000000000
+      internalID: 399818133032022604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 102
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2961c9766b7b61a30800000000000000
+      internalID: 4185734897737668242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 103
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b21423b61c28c70800000000000000
+      internalID: 8971946073824242449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 101
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c366ea2538e4c64c0800000000000000
+      internalID: -4292970018856081860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_4
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 101
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcea35186bc050b00800000000000000
+      internalID: 794054887294086863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_5
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 102
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79c5675e2e6995540800000000000000
+      internalID: 4997191162800790679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_6
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 103
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a93d23f4caa7f60800000000000000
+      internalID: 8032922341523823157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_7
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 101
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b671c1823d1404a0800000000000000
+      internalID: -6628140648820017482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_8
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 69
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6fb229ae7dcdf80800000000000000
+      internalID: -8080346228934838550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_9
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 70
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8b4fa1e7dfa2ee70800000000000000
+      internalID: 9143063535254719373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_10
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 71
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 155db5e23026df0c0800000000000000
+      internalID: -4540365083517397679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_11
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 69
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1601d8c8a3cee3b50800000000000000
+      internalID: 6574952242217816161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_12
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 69
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f575b2aa5fd0800800000000000000
+      internalID: 580390038221053762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_13
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 70
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0039b3ede4af5a30800000000000000
+      internalID: 4206261918622101514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_14
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 71
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e7c5c147620d5310800000000000000
+      internalID: 1395274102063089635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_15
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 69
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb04ed26f07a0cae0800000000000000
+      internalID: -1531040188780887874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_16
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 37
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3552c53a3d9e1cf0800000000000000
+      internalID: -279613253514799813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_17
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 38
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ca8036925ed7a50800000000000000
+      internalID: 6520619801420278928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_18
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 39
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6785ec8d9d9a5090800000000000000
+      internalID: -8044944484344690834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_19
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 37
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4905c21ab558c8c0800000000000000
+      internalID: -3978836013114652337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_20
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 37
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6d7f7a3984ba410800000000000000
+      internalID: 1489363900791510726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_21
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 38
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7ec67067d51480b0800000000000000
+      internalID: -5727428811327877509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_22
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 39
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6083aac52ae8b0e50800000000000000
+      internalID: 6776666892299548678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_23
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 37
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e47cebf96f66f7ac0800000000000000
+      internalID: -3855249546577787058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_24
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 5
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b616e6e27fba192d0800000000000000
+      internalID: -3273646375997382293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_25
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 6
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b879c64cb8e5bf0800000000000000
+      internalID: -333675646627116257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_26
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 7
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c017fb43275ba10800000000000000
+      internalID: 1924569986646477841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_27
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 5
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e90e9d0d1091360800000000000000
+      internalID: 7140740680692833919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_28
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 5
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c1a595d2d6f7280800000000000000
+      internalID: -9043389485196632940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_29
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 6
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f776dafc43ce839d0800000000000000
+      internalID: -2794223857216690305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_30
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 7
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3979d495f0e7b1110800000000000000
+      internalID: 1232717527403829139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy3_31
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 5
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 153616b2bfb12c650800000000000000
+      internalID: 6251589998322213713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
