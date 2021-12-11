@@ -17,6 +17,6 @@ MonoBehaviour:
   maxHealth: 150
   currentHealth: 150
   damage: 15
-  defence: 30
+  defence: 45
   speed: 25
   accuaracy: 25

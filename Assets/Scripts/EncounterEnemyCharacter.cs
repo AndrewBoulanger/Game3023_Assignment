@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EncounterEnemyCharacter : ICharacter
 {
+    [HideInInspector]
     public HealthBar healthbar;
     //ordered list of probability values, distance from the previous value represents the probability of that ability being called
     List<float> AbilityProbabilityRange;
@@ -26,15 +27,18 @@ public class EncounterEnemyCharacter : ICharacter
     {
         base.Start();
   
-        currentHealth = stats.MaxHealth;
         AbilityProbabilityRange = new List<float>();
         UpdateAIPattern();
-        if(healthbar != null)
-            healthbar.SetMaxHealth(stats.MaxHealth);
+
 
     }
 
-  
+    public void SetBeginningHealth()
+    {
+        currentHealth = stats.CurrentHealth;
+        healthbar.SetMaxHealth(stats.MaxHealth);
+    }
+
     public override void TakeTurn()
     {
         if(aiPattern == null)
@@ -62,8 +66,8 @@ public class EncounterEnemyCharacter : ICharacter
         print(currentHealth);
         int damageResult = base.TakeDamage(damage);
 
-        UpdateAIPattern();
         healthbar.SetHealth(currentHealth);
+        UpdateAIPattern();
         return damageResult;
     }
 

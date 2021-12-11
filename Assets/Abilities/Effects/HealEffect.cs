@@ -9,7 +9,7 @@ public class HealEffect : IEffect
     private int healthToAdd;
     public override void ApplyEffect(ICharacter self, ICharacter other)
     {
-
+        self.AddHealth(healthToAdd);
     }
 
     public override string GetEffectMessage(ICharacter self, ICharacter other)
