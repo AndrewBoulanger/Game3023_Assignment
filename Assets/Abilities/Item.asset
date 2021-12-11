@@ -16,3 +16,4 @@ MonoBehaviour:
   target: 1
   effects: []
   type: 3
+  animToPlay: 2

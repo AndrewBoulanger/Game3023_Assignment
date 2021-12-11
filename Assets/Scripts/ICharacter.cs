@@ -17,6 +17,9 @@ public abstract class ICharacter : MonoBehaviour
 
     protected ICharacter opponent;
 
+    [SerializeField]
+    public Animator vfxAnimator;
+
     bool isGuarding, isBuffed;
     public void SetGuarding() => isGuarding = true;
     public void SetIsBuffed() => isBuffed = true;

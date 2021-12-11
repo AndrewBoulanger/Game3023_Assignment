@@ -25,6 +25,9 @@ public class BattleInstance : MonoBehaviour
 
     bool wonBattle, lostBattle, battleIsOver, readyToLeaveScene;
 
+    [SerializeField]
+    GameObject enemyVFXPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,8 @@ public class BattleInstance : MonoBehaviour
 
         player.SetOpponent(Enemy);
         Enemy.SetOpponent(player);
+
+        Enemy.vfxAnimator = enemyVFXPlayer.GetComponent<Animator>();
     }
 
 

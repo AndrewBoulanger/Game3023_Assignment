@@ -26,6 +26,8 @@ public class EncounterEnemyCharacter : ICharacter
         AbilityProbabilityRange = new List<float>();
         UpdateAIPattern();
         healthbar.SetMaxHealth(stats.MaxHealth);
+
+        
     }
 
   
@@ -37,7 +39,7 @@ public class EncounterEnemyCharacter : ICharacter
         //calls the corresponding ability
         for(int i = 0; i < AbilityProbabilityRange.Count; i++)
         {
-            if(randomValue < AbilityProbabilityRange[i])
+            if(randomValue <= AbilityProbabilityRange[i])
             {
                 UseAbility(i);
 

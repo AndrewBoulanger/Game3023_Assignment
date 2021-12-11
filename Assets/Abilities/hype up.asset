@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: hype up
   m_EditorClassIdentifier: 
   name: hype up
-  target: 0
+  target: 1
   effects:
   - {fileID: 11400000, guid: ba97fd599f6db874cb45ba99fb88e1ef, type: 2}
   type: 1
+  animToPlay: 3
