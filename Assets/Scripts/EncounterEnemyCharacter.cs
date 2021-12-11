@@ -8,6 +8,8 @@ public class EncounterEnemyCharacter : ICharacter
     //ordered list of probability values, distance from the previous value represents the probability of that ability being called
     List<float> AbilityProbabilityRange;
 
+    EnemyAIPattern aiPattern;
+
     [SerializeField]
     EnemyAIPattern maxHealthbehaviour;
 
@@ -20,61 +22,68 @@ public class EncounterEnemyCharacter : ICharacter
     [SerializeField]
     EnemyAIPattern criticalHealthbehaviour;
 
-    private void Start()
+    protected override void Start()
     {
-        stats.CurrentHealth = stats.MaxHealth;
+        base.Start();
+  
+        currentHealth = stats.MaxHealth;
         AbilityProbabilityRange = new List<float>();
         UpdateAIPattern();
-        healthbar.SetMaxHealth(stats.MaxHealth);
+        if(healthbar != null)
+            healthbar.SetMaxHealth(stats.MaxHealth);
 
-        
     }
 
   
     public override void TakeTurn()
     {
+        if(aiPattern == null)
+            UpdateAIPattern();
         //generates a value somewhere within the ability probability range
         float randomValue = Random.Range(0, AbilityProbabilityRange[AbilityProbabilityRange.Count -1] );
 
         //calls the corresponding ability
-        for(int i = 0; i < AbilityProbabilityRange.Count; i++)
+        for(int i = 0; i < AbilityProbabilityRange.Count ; i++)
         {
             if(randomValue <= AbilityProbabilityRange[i])
             {
                 UseAbility(i);
-
-                break;
+                
+                return;
             }
+            print(i);
         }
-
+        
+        print(randomValue);
     }
 
     public override int TakeDamage(int damage)
     {
+        print(currentHealth);
         int damageResult = base.TakeDamage(damage);
 
         UpdateAIPattern();
-        healthbar.SetHealth(stats.CurrentHealth);
+        healthbar.SetHealth(currentHealth);
         return damageResult;
     }
 
     public override void AddHealth(int healthToAdd)
     {
         base.AddHealth(healthToAdd);
-        healthbar.SetHealth(stats.CurrentHealth);
+        healthbar.SetHealth(currentHealth);
         UpdateAIPattern();
     }
 
     //changes the AI pattern based on the enemy's health
     void UpdateAIPattern()
     {
-        if (stats.CurrentHealth == stats.MaxHealth)
+        if (currentHealth == stats.MaxHealth)
             ChangeEnemyAIPattern(maxHealthbehaviour);
-        else if (stats.CurrentHealth > stats.MaxHealth * 0.5)
+        else if (currentHealth > stats.MaxHealth * 0.5f)
             ChangeEnemyAIPattern(healthOverHalfbehaviour);
-        else if (stats.CurrentHealth > stats.MaxHealth * 0.25)
+        else if (currentHealth > stats.MaxHealth * 0.25f)
             ChangeEnemyAIPattern(HealthBelowHalfbehaviour);
-        else if (stats.CurrentHealth < 0.25)
+        else 
             ChangeEnemyAIPattern(criticalHealthbehaviour);
     }
 
@@ -82,21 +91,19 @@ public class EncounterEnemyCharacter : ICharacter
     //sets probability of each attack based on the new AIPattern
     void ChangeEnemyAIPattern(EnemyAIPattern newPattern)
     {
-       
+       if(AbilityProbabilityRange == null)
+            AbilityProbabilityRange = new List<float>();
         AbilityProbabilityRange.Clear();
 
         float abilityChance = 0.0f;
 
         foreach(Ability a in abilities)
         {
-            if(a != null)
-            { 
-                abilityChance += newPattern.GetAttackProbablity(a.Type);
-                AbilityProbabilityRange.Add(abilityChance);
-            }
+            abilityChance += newPattern.GetAttackProbablity(a.Type);
+            AbilityProbabilityRange.Add(abilityChance);
         }
 
-        
+        aiPattern = newPattern;
     }
 
 }

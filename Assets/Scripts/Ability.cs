@@ -29,7 +29,6 @@ public class Ability : ScriptableObject
 
     public void Cast(ICharacter self, ICharacter other)
     {
-
         string message = self.name + " used " + name;
 
         foreach (IEffect effect in effects)

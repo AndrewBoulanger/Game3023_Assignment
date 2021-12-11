@@ -108,8 +108,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   stats: {fileID: 11400000, guid: 219949d6d245e8641bc46ef5812f086a, type: 2}
-  vfxAnimator: {fileID: 8973222779985525123}
-  healthbar: {fileID: 11268919478884620}
+  vfxAnimator: {fileID: 0}
+  healthbar: {fileID: 0}
   maxHealthbehaviour: {fileID: 11400000, guid: 10e64baa108d4004f8b74c8adf4a85ae, type: 2}
   healthOverHalfbehaviour: {fileID: 11400000, guid: 6861793ad6b985d4bb6c8c7c9ec7ff10, type: 2}
   HealthBelowHalfbehaviour: {fileID: 11400000, guid: a5ffb194dd74eac46977ed45ffe06adf, type: 2}
@@ -228,17 +228,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4334914783301874413, guid: 18d353b5f01e7bf4b94c337f30712285, type: 3}
   m_PrefabInstance: {fileID: 4323665660197066300}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &11268919478884620 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4334914784086675248, guid: 18d353b5f01e7bf4b94c337f30712285, type: 3}
-  m_PrefabInstance: {fileID: 4323665660197066300}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0576e24477c3e3d48b87626a8d4bf674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8538256229093413547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -299,10 +288,5 @@ PrefabInstance:
 --- !u!4 &8973222779985525121 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 791138602382519082, guid: f0086861337626041a7b1bfc79ca0a39, type: 3}
-  m_PrefabInstance: {fileID: 8538256229093413547}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &8973222779985525123 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 791138602382519080, guid: f0086861337626041a7b1bfc79ca0a39, type: 3}
   m_PrefabInstance: {fileID: 8538256229093413547}
   m_PrefabAsset: {fileID: 0}

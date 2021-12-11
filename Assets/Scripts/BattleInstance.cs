@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class BattleInstance : MonoBehaviour
 {
@@ -16,17 +17,20 @@ public class BattleInstance : MonoBehaviour
     [SerializeField]
     EncounterUI uI;
     
-    bool isPlayersTurn = false;
+    bool isPlayersTurn = true;
 
     [SerializeField]
     Ability enemyAttack;
 
-    bool ReadyToAdvanceTurn;
+    bool ReadyToAdvanceTurn = false;
 
     bool wonBattle, lostBattle, battleIsOver, readyToLeaveScene;
 
     [SerializeField]
-    GameObject enemyVFXPlayer;
+    GameObject enemyVFXPlayer, enemyHealthBar;
+
+    [SerializeField]
+    Text textbox;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +47,8 @@ public class BattleInstance : MonoBehaviour
         Enemy.SetOpponent(player);
 
         Enemy.vfxAnimator = enemyVFXPlayer.GetComponent<Animator>();
+        Enemy.GetComponent<EncounterEnemyCharacter>().healthbar = enemyHealthBar.GetComponent<HealthBar>();
+        
     }
 
 
@@ -56,21 +62,21 @@ public class BattleInstance : MonoBehaviour
             {
                 EndBattleScene();
             }
-            else if (battleIsOver && Input.GetButtonDown("Submit"))
+            else if (battleIsOver )
             {
                 if (wonBattle)
                 {
                     uI.DisplayText(Enemy.name + " was defeated");
                 }
-                else
+                else if(lostBattle)
                     uI.DisplayText("You've run out of health. \nGameOver");
             }
 
-            if (ReadyToAdvanceTurn && Input.GetButtonDown("Submit"))
+            if (ReadyToAdvanceTurn )
             {
-                ReadyToAdvanceTurn = false;
-
+                textbox.text = "advance turns called";
                 AdvanceTurns();
+                
             }
 
 
@@ -85,6 +91,10 @@ public class BattleInstance : MonoBehaviour
     {
         uI.DisplayText(msg);
          uI.SetAbilityPanelVisible(false);
+
+        //switch turns based on who just attacked
+         isPlayersTurn = (caster == Enemy);
+
     }
 
     private void OnTextDisplayed()
@@ -103,8 +113,7 @@ public class BattleInstance : MonoBehaviour
 
     public void AdvanceTurns()
     {
-        isPlayersTurn = !isPlayersTurn;
-
+        ReadyToAdvanceTurn = false;
         ICharacter currentCharacter = (isPlayersTurn) ? player : Enemy;
 
         if(wonBattle || lostBattle)
@@ -115,12 +124,14 @@ public class BattleInstance : MonoBehaviour
             OnPlayerTurnBegin.Invoke(player);
             uI.SetAbilityPanelVisible(true);
             player.TakeTurn();
+            textbox.text = "its the players turn";
         }
         else
         {
-           // uI.SetAbilityPanelVisible(false);
+            uI.SetAbilityPanelVisible(false);
             OnEnemyTurnBegin.Invoke(Enemy);
             Enemy.TakeTurn();
+            textbox.text = "its the enemies turn";
         }
     }
 

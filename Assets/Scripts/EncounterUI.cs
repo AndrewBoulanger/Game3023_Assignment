@@ -15,6 +15,8 @@ public class EncounterUI : MonoBehaviour
 
     [SerializeField]
     private GameObject abilityPanel;
+    [SerializeField]
+    Text textBox;
 
     private IEnumerator animateTextReference = null;
 
@@ -37,6 +39,7 @@ public class EncounterUI : MonoBehaviour
 
     public IEnumerator AnimateText(string message)
     {
+        textBox.text = "animate text started";
         encounterText.text = "";
         for(int currentCharacter = 0; currentCharacter < message.Length; currentCharacter++ )
         {
@@ -44,8 +47,10 @@ public class EncounterUI : MonoBehaviour
 
             yield return new WaitForSeconds(timeBetweenCharacters);
         }
-         animateTextReference = null;
+        animateTextReference = null;
         onTextAnimationDone.Invoke();
+        textBox.text = "animate text ended";
+        yield return null;
     }
 
 

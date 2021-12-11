@@ -11,6 +11,7 @@ public abstract class ICharacter : MonoBehaviour
     public Ability[] abilities;
     public UnityEvent<Ability, ICharacter, string> onAbilityCast;
     public UnityEvent<ICharacter> OnCharacterDefeated;
+    public int currentHealth;
 
     [SerializeField]
     protected CharacterStats stats;
@@ -29,6 +30,13 @@ public abstract class ICharacter : MonoBehaviour
             opponent = other;
     }
 
+    protected virtual void Start()
+    {
+        currentHealth = stats.CurrentHealth;
+        print(this.name + currentHealth);
+        print(this.name + stats.CurrentHealth);
+    }
+
     public abstract void TakeTurn();
 
     public void UseAbility(int abilitySlot)
@@ -39,6 +47,7 @@ public abstract class ICharacter : MonoBehaviour
 
     public virtual int TakeDamage(int damage)
     {
+        print(currentHealth);
         float tempDamage = damage;
         if (isGuarding)
         {
@@ -46,20 +55,20 @@ public abstract class ICharacter : MonoBehaviour
             isGuarding = false;
         }
 
-        stats.CurrentHealth -= (int)tempDamage;
+        currentHealth = currentHealth - (int)tempDamage;
 
-        if(stats.CurrentHealth <= 0)
+        if(currentHealth <= 0)
             OnCharacterDefeated.Invoke(this);
-
+        
         return (int)tempDamage;
     }
 
     public virtual void AddHealth(int healthToAdd)
     {
-        stats.CurrentHealth += healthToAdd;
+        currentHealth += healthToAdd;
 
-        if(stats.CurrentHealth > stats.MaxHealth)
-           stats.CurrentHealth = stats.MaxHealth;
+        if(currentHealth > stats.MaxHealth)
+           currentHealth = stats.MaxHealth;
     }
 
     public int CalculateDamage()
