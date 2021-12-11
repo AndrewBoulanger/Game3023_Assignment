@@ -46,13 +46,14 @@ public class PlayerBehaviour : MonoBehaviour
         {
            
             isMoving = false;
+       
         }
         else{
           
             isMoving = true;
         }
-        animator.SetFloat("Vely", Input.GetAxisRaw("Vertical"));
-        animator.SetFloat("Velx", Input.GetAxisRaw("Horizontal"));
+        animator.SetFloat("Vely", inputY);
+        animator.SetFloat("Velx", inputX);
         animator.SetBool("IsMoving", isMoving);
         if (isMoving)
         {

@@ -106,7 +106,7 @@ MonoBehaviour:
   OnCharacterDefeated:
     m_PersistentCalls:
       m_Calls: []
-  stats: {fileID: 11400000, guid: 6a49a46fd9dec164689fa98b3b6ef15b, type: 2}
+  stats: {fileID: 11400000, guid: af561ed20b735f44ab1f3e1cb29f81a9, type: 2}
   healthbar: {fileID: 11268919478884620}
   maxHealthbehaviour: {fileID: 11400000, guid: 10e64baa108d4004f8b74c8adf4a85ae, type: 2}
   healthOverHalfbehaviour: {fileID: 11400000, guid: 6861793ad6b985d4bb6c8c7c9ec7ff10, type: 2}
