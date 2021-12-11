@@ -6,10 +6,21 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class Buttons : MonoBehaviour
 {
- 
+    Scene m_Scene;
+    string sceneName;
     public void OnPlayButtonPressed()
     {
-        SceneManager.LoadScene("Cafeteria");
+        if (SaveSystem.LoadPlayer() != null)
+        {
+            PlayerData data = SaveSystem.LoadPlayer();
+
+            sceneName = data.sceneName;
+
+            SceneManager.LoadScene(sceneName);
+        }
+        else
+            SceneManager.LoadScene("CafeTeria");
+
     }
    
     public void OnQuitButtonPressed()

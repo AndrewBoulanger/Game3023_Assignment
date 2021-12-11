@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    [SerializeField]
+    public Ability[] abilities;
 
     [SerializeField]
     private float moveSpeed = 1.0f;
@@ -30,6 +32,16 @@ public class PlayerBehaviour : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         musicSrc = GetComponent<AudioSource>();
+        if (SaveSystem.LoadPlayer() != null)
+        {
+            PlayerData data = SaveSystem.LoadPlayer();
+
+            Vector3 position;
+            position.x = data.position[0];
+            position.y = data.position[1];
+            position.z = data.position[2];
+            transform.position = position;
+        }
     }
 
     // Update is called once per frame
@@ -66,7 +78,10 @@ public class PlayerBehaviour : MonoBehaviour
             musicSrc.Stop();
 
     }
-
+    public void Save()
+    {
+        SaveSystem.SavePlayer(this);
+    }
 
 }
 

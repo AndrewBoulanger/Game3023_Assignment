@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Heal
   m_EditorClassIdentifier: 
   name: heal
+  Id: 2
   target: 1
   effects:
   - {fileID: 11400000, guid: a42005c29b8c65449bb9e12da85bfd92, type: 2}
