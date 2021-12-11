@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4334914783301874409, guid: 18d353b5f01e7bf4b94c337f30712285, type: 3}
+      propertyPath: m_Value
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4334914783301874409, guid: 18d353b5f01e7bf4b94c337f30712285, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4334914783301874410, guid: 18d353b5f01e7bf4b94c337f30712285, type: 3}
       propertyPath: m_Name
       value: EnemyHealthBar
@@ -226,6 +234,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4334914784086675249, guid: 18d353b5f01e7bf4b94c337f30712285, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -590.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4334914784086675249, guid: 18d353b5f01e7bf4b94c337f30712285, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -21.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18d353b5f01e7bf4b94c337f30712285, type: 3}
 --- !u!1 &26309509 stripped
@@ -300,7 +316,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 150
   m_WholeNumbers: 0
-  m_Value: 131
+  m_Value: 150
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -651,17 +667,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6779e616cee761d47b22d3c8ba5e8e67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &669891152 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 669891152, guid: 286262e3f9943db499e3d11002cd911a, type: 3}
-  m_PrefabInstance: {fileID: 8262712564842829650}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &680314820
@@ -2212,7 +2217,6 @@ MonoBehaviour:
   enemyAttack: {fileID: 11400000, guid: 4313584d9aa47614f8548475fdcba558, type: 2}
   enemyVFXPlayer: {fileID: 359964800}
   enemyHealthBar: {fileID: 26309509}
-  textbox: {fileID: 669891152}
   OnPlayerTurnBegin:
     m_PersistentCalls:
       m_Calls: []

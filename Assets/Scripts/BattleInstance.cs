@@ -29,9 +29,6 @@ public class BattleInstance : MonoBehaviour
     [SerializeField]
     GameObject enemyVFXPlayer, enemyHealthBar;
 
-    [SerializeField]
-    Text textbox;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +46,8 @@ public class BattleInstance : MonoBehaviour
         Enemy.vfxAnimator = enemyVFXPlayer.GetComponent<Animator>();
         Enemy.GetComponent<EncounterEnemyCharacter>().healthbar = enemyHealthBar.GetComponent<HealthBar>();
         
+        print(Enemy.currentHealth);
+        Enemy.GetComponent<EncounterEnemyCharacter>().SetBeginningHealth();
     }
 
 
@@ -56,9 +55,9 @@ public class BattleInstance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Submit"))
+        if(Input.GetButtonDown("Submit") && ReadyToAdvanceTurn)
         {
-            if(readyToLeaveScene)
+            if(readyToLeaveScene )
             {
                 EndBattleScene();
             }
@@ -69,16 +68,12 @@ public class BattleInstance : MonoBehaviour
                     uI.DisplayText(Enemy.name + " was defeated");
                 }
                 else if(lostBattle)
+                { 
                     uI.DisplayText("You've run out of health. \nGameOver");
+                }
             }
-
-            if (ReadyToAdvanceTurn )
-            {
-                textbox.text = "advance turns called";
+            else
                 AdvanceTurns();
-                
-            }
-
 
         }
     }
@@ -107,8 +102,8 @@ public class BattleInstance : MonoBehaviour
         {
             battleIsOver = true;
         }
-        else
-            ReadyToAdvanceTurn = true;
+
+         ReadyToAdvanceTurn = true;
     }
 
     public void AdvanceTurns()
@@ -124,14 +119,12 @@ public class BattleInstance : MonoBehaviour
             OnPlayerTurnBegin.Invoke(player);
             uI.SetAbilityPanelVisible(true);
             player.TakeTurn();
-            textbox.text = "its the players turn";
         }
         else
         {
             uI.SetAbilityPanelVisible(false);
             OnEnemyTurnBegin.Invoke(Enemy);
             Enemy.TakeTurn();
-            textbox.text = "its the enemies turn";
         }
     }
 

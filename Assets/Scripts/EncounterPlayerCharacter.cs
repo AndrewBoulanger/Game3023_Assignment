@@ -9,9 +9,6 @@ public class EncounterPlayerCharacter : ICharacter
     [SerializeField]
     public List<AbilityButton> abilityButtons;
 
-    [SerializeField]
-    Text textBox;
-
     public HealthBar healthbar;
     protected override void Start()
     {
@@ -34,7 +31,6 @@ public class EncounterPlayerCharacter : ICharacter
     void OnButtonPressed()
     {
         UseAbility(0);
-        textBox.text = "ability button pressed";
     }
 
     public override void TakeTurn()

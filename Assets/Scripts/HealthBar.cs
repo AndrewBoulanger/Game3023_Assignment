@@ -16,5 +16,6 @@ public class HealthBar : MonoBehaviour
     {
         slider.maxValue = health;
         slider.value = health;
+        slider.Rebuild(CanvasUpdate.MaxUpdateValue);
     }
 }

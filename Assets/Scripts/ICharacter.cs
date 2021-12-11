@@ -69,6 +69,8 @@ public abstract class ICharacter : MonoBehaviour
 
         if(currentHealth > stats.MaxHealth)
            currentHealth = stats.MaxHealth;
+
+               print(currentHealth);
     }
 
     public int CalculateDamage()
