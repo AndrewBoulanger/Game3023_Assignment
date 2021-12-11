@@ -7,7 +7,9 @@ public class BattleInstance : MonoBehaviour
 {
     [SerializeField]
     ICharacter player;
-    
+
+    [SerializeField]
+    Spawner enemyPicker;
     [SerializeField]
     ICharacter Enemy;
 
@@ -26,6 +28,8 @@ public class BattleInstance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Enemy = enemyPicker.randomPicker();
+        ICharacter.Instantiate(Enemy);
        player.onAbilityCast.AddListener(OnAbilityCast);
         Enemy.onAbilityCast.AddListener(OnAbilityCast);
         player.OnCharacterDefeated.AddListener(OnPlayerDefeated);
