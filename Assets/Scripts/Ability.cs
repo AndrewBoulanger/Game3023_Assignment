@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Ability", menuName = "AbilitySystem/Ability")]
+
 public class Ability : ScriptableObject
 {
     [SerializeField]
     private new string name;
+
+    [SerializeField]
+    public new int Id;
 
     [SerializeField]
     private AbilityTargets target;

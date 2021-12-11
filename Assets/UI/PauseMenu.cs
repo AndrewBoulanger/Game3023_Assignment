@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public static bool isGamePaused = false;
 
    public GameObject pauseMenuUI;
+    PlayerBehaviour player;
   
     void Update()
     {
@@ -41,10 +42,15 @@ public class PauseMenu : MonoBehaviour
     public void LoadMainMenu()
     {
         isGamePaused = false;
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("MainMenuScene");
     }
     public void Save()
     {
-
+        player = FindObjectOfType<PlayerBehaviour>();
+        player.Save();
+        isGamePaused = false;
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("MainMenuScene");
     }
 }

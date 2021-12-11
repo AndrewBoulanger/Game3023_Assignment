@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   exp: 0
-  maxHealth: 150
-  currentHealth: 38
-  damage: 15
-  defence: 50
-  speed: 25
-  accuaracy: 25
+  maxHealth: 80
+  currentHealth: 40
+  damage: 18
+  defence: 20
+  speed: 30
+  accuaracy: 30

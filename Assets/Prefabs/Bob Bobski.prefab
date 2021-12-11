@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   encounterRate: 0
-  frameDelay: 30
+  timeDelayInSeconds: 0.5
   encounterRateIncrement: 1
 --- !u!114 &1280337267048126442
 MonoBehaviour:
@@ -344,6 +344,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc84592e42fc0e2418e6687b23d47427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilities:
+  - {fileID: 11400000, guid: 4313584d9aa47614f8548475fdcba558, type: 2}
+  - {fileID: 11400000, guid: a1fab43960a1e444aa6b70f14554cdd9, type: 2}
+  - {fileID: 11400000, guid: 1d9f88c531ac4c240978afe79afa47d7, type: 2}
+  - {fileID: 11400000, guid: 1d9f88c531ac4c240978afe79afa47d7, type: 2}
   moveSpeed: 15
   decay: 0.616
   footStep: {fileID: 8300000, guid: 86d552238d7504947a003535c7cb9e87, type: 3}

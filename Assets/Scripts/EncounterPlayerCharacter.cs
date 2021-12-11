@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class EncounterPlayerCharacter : ICharacter
 {
     [SerializeField]
-    List<AbilityButton> abilityButtons;
+    public List<AbilityButton> abilityButtons;
 
     public HealthBar healthbar;
     private void Start()
