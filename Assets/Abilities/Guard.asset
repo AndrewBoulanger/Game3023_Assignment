@@ -18,3 +18,4 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: 8ed926db9dbcdca4982559e7abd17c4a, type: 2}
   type: 4
+  animToPlay: 1

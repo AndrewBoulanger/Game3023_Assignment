@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82638301e4b23d24a861aae902f673e2, type: 3}
   m_Name: hype up
   m_EditorClassIdentifier: 
-  name: sa
-  Id: 3
-  target: 0
+  name: hype up
+  target: 1
   effects:
   - {fileID: 11400000, guid: ba97fd599f6db874cb45ba99fb88e1ef, type: 2}
   type: 1
+  animToPlay: 3

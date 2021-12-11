@@ -9,14 +9,17 @@ public class EncounterPlayerCharacter : ICharacter
     [SerializeField]
     public List<AbilityButton> abilityButtons;
 
-    public HealthBar healthbar;
-    private void Start()
-    {
+    [SerializeField]
+    Text textBox;
 
-        abilityButtons[0].GetComponent<Button>().onClick.AddListener(OnButton0Pressed);
-        abilityButtons[1].GetComponent<Button>().onClick.AddListener(OnButton1Pressed);
-        abilityButtons[2].GetComponent<Button>().onClick.AddListener(OnButton2Pressed);
-        abilityButtons[3].GetComponent<Button>().onClick.AddListener(OnButton3Pressed);
+    public HealthBar healthbar;
+    protected override void Start()
+    {
+        base.Start();
+        abilityButtons[0].GetComponent<Button>().onClick.AddListener( OnButtonPressed);
+        abilityButtons[1].GetComponent<Button>().onClick.AddListener( () => UseAbility(1));
+        abilityButtons[2].GetComponent<Button>().onClick.AddListener( () => UseAbility(2));
+        abilityButtons[3].GetComponent<Button>().onClick.AddListener( () => UseAbility(3));
 
         for(int i = 0; i < abilityButtons.Count; i++)
         {
@@ -28,12 +31,11 @@ public class EncounterPlayerCharacter : ICharacter
         healthbar.SetMaxHealth(stats.MaxHealth);
     }
 
-
-    void OnButton0Pressed() => UseAbility(0);
-    void OnButton1Pressed() => UseAbility(1);
-    void OnButton2Pressed() => UseAbility(2);
-    void OnButton3Pressed() => UseAbility(3);
-
+    void OnButtonPressed()
+    {
+        UseAbility(0);
+        textBox.text = "ability button pressed";
+    }
 
     public override void TakeTurn()
     {
@@ -41,6 +43,11 @@ public class EncounterPlayerCharacter : ICharacter
     }
     public void Update()
     {
-        healthbar.SetHealth(stats.CurrentHealth);
+        healthbar.SetHealth(currentHealth);
+    }
+
+    private void OnDisable()
+    {
+        stats.CurrentHealth = currentHealth;
     }
 }

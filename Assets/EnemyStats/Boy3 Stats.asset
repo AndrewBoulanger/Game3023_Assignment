@@ -15,7 +15,7 @@ MonoBehaviour:
   level: 1
   exp: 0
   maxHealth: 100
-  currentHealth: 25
+  currentHealth: 100
   damage: 8
   defence: 40
   speed: 30
