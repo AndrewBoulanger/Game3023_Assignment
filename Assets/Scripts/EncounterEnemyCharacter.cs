@@ -29,8 +29,6 @@ public class EncounterEnemyCharacter : ICharacter
   
         AbilityProbabilityRange = new List<float>();
         UpdateAIPattern();
-
-
     }
 
     public void SetBeginningHealth()
@@ -55,10 +53,7 @@ public class EncounterEnemyCharacter : ICharacter
                 
                 return;
             }
-            print(i);
         }
-        
-        print(randomValue);
     }
 
     public override int TakeDamage(int damage)
@@ -95,19 +90,23 @@ public class EncounterEnemyCharacter : ICharacter
     //sets probability of each attack based on the new AIPattern
     void ChangeEnemyAIPattern(EnemyAIPattern newPattern)
     {
-       if(AbilityProbabilityRange == null)
-            AbilityProbabilityRange = new List<float>();
-        AbilityProbabilityRange.Clear();
-
-        float abilityChance = 0.0f;
-
-        foreach(Ability a in abilities)
+        if(newPattern != aiPattern)
         {
-            abilityChance += newPattern.GetAttackProbablity(a.Type);
-            AbilityProbabilityRange.Add(abilityChance);
-        }
+            if (AbilityProbabilityRange == null)
+                AbilityProbabilityRange = new List<float>();
 
-        aiPattern = newPattern;
+            AbilityProbabilityRange.Clear();
+
+            float abilityChance = 0.0f;
+
+            foreach (Ability a in abilities)
+            {
+                abilityChance += newPattern.GetAttackProbablity(a.Type);
+                AbilityProbabilityRange.Add(abilityChance);
+            }
+
+            aiPattern = newPattern;
+        }
     }
 
 }

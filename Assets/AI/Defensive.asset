@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df955d1f7992f88459854bc7bf8dfae6, type: 3}
   m_Name: Defensive
   m_EditorClassIdentifier: 
-  buffs_and_debuffs: 0.8
+  buffs_and_debuffs: 0.6
   attacks: 0.6
-  healing: 0.1
-  defensive: 0.5
+  healing: 0.75
+  defensive: 2

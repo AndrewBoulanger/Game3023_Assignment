@@ -19,9 +19,6 @@ public class BattleInstance : MonoBehaviour
     
     bool isPlayersTurn = true;
 
-    [SerializeField]
-    Ability enemyAttack;
-
     bool ReadyToAdvanceTurn = false;
 
     bool wonBattle, lostBattle, battleIsOver, readyToLeaveScene;
@@ -77,10 +74,6 @@ public class BattleInstance : MonoBehaviour
 
         }
     }
-
-
-    public UnityEvent<ICharacter> OnPlayerTurnBegin;
-    public UnityEvent<ICharacter> OnEnemyTurnBegin;
     
     private void OnAbilityCast(Ability ability, ICharacter caster, string msg)
     {
@@ -109,21 +102,13 @@ public class BattleInstance : MonoBehaviour
     public void AdvanceTurns()
     {
         ReadyToAdvanceTurn = false;
-        ICharacter currentCharacter = (isPlayersTurn) ? player : Enemy;
-
-        if(wonBattle || lostBattle)
-            return;
 
         if (isPlayersTurn)
         {
-            OnPlayerTurnBegin.Invoke(player);
             uI.SetAbilityPanelVisible(true);
-            player.TakeTurn();
         }
         else
         {
-            uI.SetAbilityPanelVisible(false);
-            OnEnemyTurnBegin.Invoke(Enemy);
             Enemy.TakeTurn();
         }
     }

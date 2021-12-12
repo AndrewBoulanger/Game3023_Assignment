@@ -15,4 +15,4 @@ MonoBehaviour:
   buffs_and_debuffs: 0.2
   attacks: 0.2
   healing: 4
-  defensive: 0.5
+  defensive: 0.7
