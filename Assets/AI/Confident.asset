@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffs_and_debuffs: 2
   attacks: 1.5
-  healing: 0.01
-  defensive: 0.2
+  healing: 0
+  defensive: 0.1
